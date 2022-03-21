@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+// impo'rt CreateUser from './CreateUser';
+import "./App.css"
+import Exitance from './Exitance';
+import { BrowserRouter,Routes,Route} from 'react-router-dom';
+import RegistrationForm from './RegistrationForm';
+import User from './User';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+       <div>
+         <BrowserRouter>
+           <Routes>
+             <Route path="/" element={<RegistrationForm/>}></Route>
+             <Route path='/exitance' element={<Exitance/>}></Route>
+             <Route path='/user/:id' element={<User/>}></Route>
+           </Routes>
+         </BrowserRouter>
+       </div>
   );
 }
 
